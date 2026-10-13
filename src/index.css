@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --aqua-50: #f0f9ff;
+  --aqua-100: #e0f2fe;
+  --aqua-200: #bae6fd;
+  --aqua-300: #7dd3fc;
+  --aqua-400: #38bdf8;
+  --aqua-500: #0ea5e9;
+  --aqua-600: #0284c7;
+  --aqua-700: #0369a1;
+  --aqua-800: #075985;
+  --aqua-900: #0c4a6e;
+  --teal-500: #14b8a6;
+  --teal-600: #0d9488;
+  --teal-700: #0f766e;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f9ff;
+  color: #1e293b;
+  margin: 0;
+  padding: 0;
+}
+
+/* Leaflet map z-index fix */
+.leaflet-container { z-index: 1; }
+.leaflet-pane { z-index: 1; }
+.leaflet-top, .leaflet-bottom { z-index: 2; }
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+/* Demo tour overlay */
+.tour-highlight {
+  position: relative;
+  z-index: 9999;
+  box-shadow: 0 0 0 9999px rgba(0,0,0,0.6);
+  border-radius: 8px;
+}
+
+/* Print styles */
+@media print {
+  .no-print { display: none !important; }
+  .print-page-break { page-break-before: always; }
+}
+
+/* Risk badge animations */
+@keyframes pulse-risk {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.risk-high-pulse { animation: pulse-risk 2s ease-in-out infinite; }
+
+/* Smooth transitions for all interactive elements */
+a, button { transition: all 0.15s ease; }
+
+/* Map popup custom */
+.leaflet-popup-content-wrapper {
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+  border: 1px solid #bae6fd;
+}
+.leaflet-popup-tip { background: white !important; }
